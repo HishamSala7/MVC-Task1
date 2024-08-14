@@ -1,0 +1,36 @@
+﻿@model List<Student>
+
+<h2>Student List...</h2>
+<br />
+<table class="table table-border table-hover">
+
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Address</th>
+			<th>Image</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+		
+		
+	<tbody>
+		@foreach(Student stud in Model)
+		{
+			<tr>
+				<th>@stud.Id</th>
+				<td>@stud.Name</td>
+				<td>@stud.Address</td>
+				<td> <img src="/Images/@stud.ImagePath" alt="No Photo" width="100"  /> </td>
+				<td><a href="/Student/Details/@stud.Id">Go To Details</a></td>
+			</tr>
+
+		}
+
+	</tbody>
+
+</table>
+
+<a href="/Student/ShowAddStudentScreen" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add Student</a>
+
